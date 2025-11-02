@@ -23,7 +23,7 @@ export function Header() {
   <header>
     <img src="./assets/logo.jpg" alt="Logo Termoclima" width="300" />
     <div>
-      <h1 style="color:white">Termoclima Shop</h1>
+      <h1 style="color:white"><span>Termo<span><span style="color:#A4DBE9">Clima</span> Shop</h1>
       ${SubHeader()}
     </div>
     <div class="cart-icon" onclick=${toggleCart}>
