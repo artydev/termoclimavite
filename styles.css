@@ -53,7 +53,7 @@
     --border-soft: #c8e6c9;
 
     /* Autres couleurs */
-    --button_info: #db9121;
+    --button_info: #F0CE18;
 }
    
 
@@ -87,7 +87,7 @@ body {
    ================================================================= */
 header {
     background: var(--primary-very-dark);
-    color: var(--bg-white);
+    color: var(--button_info);
     padding: 5px 5px;
     padding-right: 10px;
     display: grid;
@@ -97,6 +97,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    
 }
 
 header > *:first-child {
@@ -112,12 +113,12 @@ header > *:last-child {
 }
 
 header h1 {
-    font-size: 1.8em;
+    font-size: 3em;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     letter-spacing: -0.5px;
     text-shadow: 2px 2px 4px var(--shadow-black);
-    color: white;
+    color: var(--button_info) !important;
     text-align: center;
    
 }
@@ -294,7 +295,7 @@ header h1 {
     top: 10px;
     right: 10px;
     background: var(--button_info);
-    color: white;
+    color: var(--primary-dark);
     padding: 4px 8px;
     border-radius: 3px;
     font-size: 0.8em;
