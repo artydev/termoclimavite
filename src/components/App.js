@@ -9,11 +9,17 @@ import { Filters } from './Filters.js';
 import { ProductList } from './ProductList.js';
 import { Cart } from './Cart.js';
 import { ProductDetailsModal } from './ProductDetailsModal.js';
+import { Footer } from './Footer.js'; 
 
 // EXPORT: Le composant principal de l'application
 export function App() {
   // Le template est compacté pour éviter les nœuds de texte vides/espaces.
   return html`<div>
-    ${Header()}${!loading.value ? Filters() : ''}${ProductList()}${Cart()}${ProductDetailsModal()}
-  </div>`;
+    ${Header()}
+    ${!loading.value ? Filters() : ''}
+    ${ProductList()}
+    ${Cart()}
+    ${ProductDetailsModal()}
+    ${ Footer() } ;
+  </div>`
 }

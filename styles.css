@@ -679,3 +679,265 @@ header h1 {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* =================================================================
+   FOOTER COMPONENT STYLES
+   ================================================================= */
+.footer {
+    background: var(--primary-very-dark);
+    color: var(--bg-white);
+    padding: 50px 20px 30px;
+    margin-top: 60px;
+    box-shadow: 0 -4px 12px var(--shadow-primary);
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        var(--primary-medium) 0%, 
+        var(--primary-light) 50%, 
+        var(--primary-medium) 100%);
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+/* Store Location Card */
+.store-location {
+    background: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        rgba(255, 255, 255, 0.02) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px var(--shadow-primary-light);
+}
+
+.store-location:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-primary-medium);
+    border-color: var(--primary-lighter);
+    background: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0.08) 0%, 
+        rgba(255, 255, 255, 0.03) 100%);
+}
+
+/* Store Header */
+.store-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.store-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 2px 8px var(--shadow-black));
+    transition: transform 0.3s ease;
+}
+
+.store-location:hover .store-logo {
+    transform: scale(1.05);
+}
+
+.store-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--button_info);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px var(--shadow-black);
+}
+
+.divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--primary-lighter) 50%, 
+        transparent 100%);
+    margin: 15px auto;
+    width: 80%;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-light);
+}
+
+.address {
+    color: var(--bg-white);
+    font-size: 1em;
+    line-height: 1.6;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.contact-info a {
+    color: var(--bg-white);
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-info a::before {
+    content: '📞';
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.contact-info a:hover {
+    background: var(--primary-medium);
+    color: var(--bg-white);
+    transform: translateX(5px);
+    box-shadow: 0 3px 8px var(--shadow-button);
+}
+
+.contact-info a:hover::before {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.contact-info a:active {
+    transform: translateX(3px);
+}
+
+/* Opening Hours */
+.opening-hours {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.opening-hours-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--button_info);
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.hours-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.hours-block:last-child {
+    border-bottom: none;
+}
+
+.hours-block:hover {
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+
+.day {
+    font-weight: 600;
+    color: var(--primary-lighter);
+    font-size: 0.95em;
+}
+
+.time {
+    color: var(--bg-white);
+    font-size: 0.9em;
+    font-weight: 500;
+    text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 15px 20px;
+        margin-top: 40px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .store-location {
+        padding: 20px;
+    }
+
+    .store-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .store-name {
+        font-size: 1.2em;
+    }
+
+    .hours-block {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .time {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info a {
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+
+    .opening-hours-title {
+        font-size: 1em;
+    }
+
+    .day,
+    .time {
+        font-size: 0.85em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .store-location,
+    .store-logo,
+    .contact-info a,
+    .hours-block {
+        transition-duration: 0.01ms !important;
+    }
+}
