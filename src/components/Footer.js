@@ -8,8 +8,9 @@ function Footer () {
       <!-- Sassoferrato Location -->
       <div class="store-location">
         <div class="store-header">
-          <img src="/pellet.png" alt="Termoclima Sassoferrato - Vendita stufe e pellet" class="store-logo">
+         
           <p class="store-name">TERMOCLIMA SRL</p>
+             <h2>Sede di Fossato di Sassoferrato</h2>
           <hr class="divider">
         </div>
         
@@ -42,8 +43,9 @@ function Footer () {
       <!-- Fossato di Vico Location -->
       <div class="store-location">
         <div class="store-header">
-          <img src="/pellet.png" alt="Termoclima Fossato di Vico - Vendita stufe e pellet" class="store-logo">
+         
           <p class="store-name">TERMOCLIMA SRL</p>
+          <h2>Sede di Fossato di Vico</h2>
           <hr class="divider">
         </div>
         
