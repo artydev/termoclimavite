@@ -10,6 +10,7 @@ import { ProductList } from './ProductList.js';
 import { Cart } from './Cart.js';
 import { ProductDetailsModal } from './ProductDetailsModal.js';
 import { Footer } from './Footer.js'; 
+import { SocialFooter } from './SocialFooter.js';
 
 // EXPORT: Le composant principal de l'application
 export function App() {
@@ -20,6 +21,7 @@ export function App() {
     ${ProductList()}
     ${Cart()}
     ${ProductDetailsModal()}
-    ${ Footer() } ;
+    ${ Footer() }
+    ${ SocialFooter()}
   </div>`
 }
