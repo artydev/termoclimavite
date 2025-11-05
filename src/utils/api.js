@@ -4,7 +4,7 @@ import { products, categories, loading, cart } from '../state/signals.js';
 
 const BASE_URL = 'https://68fe03397c700772bb128814.mockapi.io/';
 
-const EN_POINT = 'products';
+const EN_POINT = 'fake';
 
 const API_URL = `${BASE_URL}${EN_POINT}`;
 
