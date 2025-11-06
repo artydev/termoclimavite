@@ -26,11 +26,15 @@ export async function loadCart() {
 export async function fetchProducts() {
     try {
         const response = await fetch(API_URL);
+
         const data = await response.json();
         
         products.value = data; 
         
+        console.clear()
         const cats = [...new Set(data.map(p => p.category))];
+
+        console.log(data.filter(p => !p.category ));
         categories.value = cats; 
         
         loading.value = false; 
