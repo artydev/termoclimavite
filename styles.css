@@ -3,6 +3,10 @@
    ================================================================= */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* =================================================================
    VARIABLES DE COULEURS
    ================================================================= */
@@ -167,6 +171,15 @@ header h1 {
 
 .subheader nav ul li:active {
     transform: translateY(1px);
+}
+
+.subheader ul li a {
+  color: var(--bg-white);
+  text-decoration: none;
+}
+
+.subheader ul li a:hover {
+  color: var(--button_info);
 }
 
 /* =================================================================
@@ -824,8 +837,9 @@ header h1 {
 }
 
 .subheader ul li:hover::after {
-  width: 60%;
+  width: 100%; /* fills full text width */
 }
+
 
 /* Responsive tweaks */
 @media (max-width: 900px) {

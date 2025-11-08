@@ -4,15 +4,16 @@ import { html } from "https://cdn.jsdelivr.net/npm/htl@0.3.1/+esm";
 import { cartCount, toggleCart } from "../state/signals.js";
 
 function SubHeader() {
-  return html`
-    <nav class="subheader">
-      <ul>
-      
-        <li>Contact</li>
-      
-      </ul>
-    </nav>
-  `;
+  return html` 
+    <div class="subheader">
+      <nav>
+        <ul>
+     
+          <li><a href="#footer">Contact</a></li>
+        
+        </ul>
+      </nav>
+    </div>`;
 }
 
 export function Header() {
