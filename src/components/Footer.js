@@ -10,7 +10,7 @@ function Footer () {
         <div class="store-header">
          
           <p class="store-name">TERMOCLIMA SRL</p>
-             <h2>Sede di Fossato di Vico</h
+             <h2>Sede di Sassoferrato</h
           <hr class="divider">
         </div>
         
