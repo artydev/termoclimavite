@@ -8,8 +8,9 @@
    ================================================================= */
 :root {
     /* Couleurs principales - Verts */
-    --primary-veryvery-green:#022A19;
+    --primary-veryvery-green:#0D3122;  
     --primary-very-dark: #006E2A;
+    --primary-green-logo:#166936;
     --primary-dark: #1b5e20;
     --primary-main: #2e7d32;
     --primary-medium: #43a047;
@@ -57,7 +58,7 @@
     --border-soft: #c8e6c9;
 
     /* Autres */
-    --button_info: #F0CE18;
+    --button_info: #F4D01E;
 }
 
 /* =================================================================
@@ -71,7 +72,6 @@
 }
 
 body {
-   
     background-color: var(--bg-white);
     scrollbar-gutter: stable;
     overflow-y: scroll;
@@ -85,22 +85,27 @@ body {
 /* =================================================================
    HEADER & NAVIGATION
    ================================================================= */
-header {
-    align-items: center;
-    background: var(--primary-very-dark);
-    box-shadow: 0 4px 12px var(--shadow-primary);
-    color: var(--button_info);
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    padding: 5px 10px 5px 5px;
-    position: sticky;
+.header {
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary-green-logo);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     z-index: 1000;
+    padding: 0 1rem;
 }
 
-header > *:first-child { justify-self: start; }
-header > *:nth-child(2) { justify-self: center; }
-header > *:last-child { justify-self: end; }
+.header .center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: none;
+    font-size: 1.5rem;
+}
 
 header h1 {
     color: var(--button_info) !important;
@@ -115,7 +120,9 @@ header h1 {
 /* =================================================================
    SUBHEADER NAVIGATION
    ================================================================= */
-.subheader { width: 100%; }
+.subheader {
+    width: 100%;
+}
 
 .subheader nav ul {
     display: flex;
@@ -154,10 +161,17 @@ header h1 {
     color: white;
 }
 
-.subheader nav ul li:hover::after { width: 80%; }
-.subheader nav ul li:active { transform: translateY(1px); }
+.subheader nav ul li:hover::after {
+    width: 80%;
+}
 
-/* Cart icon */
+.subheader nav ul li:active {
+    transform: translateY(1px);
+}
+
+/* =================================================================
+   CART ICON
+   ================================================================= */
 .cart-icon {
     background-color: var(--primary-dark);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -176,7 +190,9 @@ header h1 {
     transform: translateY(-2px);
 }
 
-.cart-icon:active { transform: translateY(0); }
+.cart-icon:active {
+    transform: translateY(0);
+}
 
 /* =================================================================
    FILTER BUTTONS
@@ -185,7 +201,7 @@ header h1 {
     display: flex;
     gap: 10px;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 100px;
     padding: 20px 0;
 }
 
@@ -207,7 +223,9 @@ header h1 {
     transform: translateY(-1px);
 }
 
-.filters button:active:not(.active) { transform: translateY(0); }
+.filters button:active:not(.active) {
+    transform: translateY(0);
+}
 
 .filters button.active {
     background: var(--primary-very-dark);
@@ -237,7 +255,9 @@ header h1 {
     width: 100%;
 }
 
-/* Product Card */
+/* =================================================================
+   PRODUCT CARD
+   ================================================================= */
 .product {
     align-items: center;
     border: 1px solid var(--primary-very-dark);
@@ -318,7 +338,9 @@ header h1 {
     text-shadow: 1px 1px 2px rgba(46, 125, 50, 0.1);
 }
 
-/* Product Buttons */
+/* =================================================================
+   PRODUCT BUTTONS
+   ================================================================= */
 .product button {
     border: none;
     border-radius: 5px;
@@ -342,7 +364,9 @@ header h1 {
     transform: translateY(-2px);
 }
 
-.product button:not(.details-btn):active { transform: translateY(0); }
+.product button:not(.details-btn):active {
+    transform: translateY(0);
+}
 
 .product .details-btn {
     background-color: var(--bg-green-light);
@@ -356,7 +380,9 @@ header h1 {
     transform: translateY(-1px);
 }
 
-.product .details-btn:active { transform: translateY(0); }
+.product .details-btn:active {
+    transform: translateY(0);
+}
 
 /* =================================================================
    CART OVERLAY
@@ -395,7 +421,9 @@ header h1 {
     will-change: transform;
 }
 
-.cart-overlay.active .cart-panel { transform: translateX(0); }
+.cart-overlay.active .cart-panel {
+    transform: translateX(0);
+}
 
 .cart-header {
     align-items: center;
@@ -468,7 +496,9 @@ header h1 {
     transform: scale(1.05);
 }
 
-.cart-item-controls button:active { transform: scale(0.98); }
+.cart-item-controls button:active {
+    transform: scale(0.98);
+}
 
 .cart-item-controls .remove-btn {
     background: linear-gradient(135deg, var(--accent-red-light) 0%, var(--accent-red-dark) 100%);
@@ -510,7 +540,9 @@ header h1 {
     transform: translateY(-2px);
 }
 
-.checkout-btn:active { transform: translateY(0); }
+.checkout-btn:active {
+    transform: translateY(0);
+}
 
 /* =================================================================
    MODAL (DETAILS)
@@ -528,7 +560,9 @@ header h1 {
     z-index: 3000;
 }
 
-.modal-overlay.active { display: flex; }
+.modal-overlay.active {
+    display: flex;
+}
 
 .modal {
     animation: modalSlideIn 0.3s ease-out;
@@ -546,8 +580,14 @@ header h1 {
 }
 
 @keyframes modalSlideIn {
-    from { opacity: 0; transform: scale(0.9) translateY(-20px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 .close-modal {
@@ -585,7 +625,7 @@ header h1 {
 }
 
 /* =================================================================
-   FOOTER - COMPACT VERSION
+   FOOTER
    ================================================================= */
 .footer {
     background: var(--primary-veryvery-green);
@@ -614,22 +654,20 @@ header h1 {
     max-width: 1400px;
 }
 
-/* Store Location Card */
+/* =================================================================
+   FOOTER - STORE LOCATION
+   ================================================================= */
 .store-location {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     box-shadow: 0 4px 12px var(--shadow-primary-light);
     padding: 15px;
-  
 }
 
-
-
-/* Store Header */
-.store-header { 
-    text-align: center; 
-    margin-bottom: 12px; 
+.store-header {
+    text-align: center;
+    margin-bottom: 12px;
 }
 
 .store-logo {
@@ -640,7 +678,9 @@ header h1 {
     width: 200px;
 }
 
-.store-location:hover .store-logo { transform: scale(1.05); }
+.store-location:hover .store-logo {
+    transform: scale(1.05);
+}
 
 .store-name {
     color: var(--button_info);
@@ -660,7 +700,9 @@ header h1 {
     width: 80%;
 }
 
-/* Contact Info */
+/* =================================================================
+   FOOTER - CONTACT INFO
+   ================================================================= */
 .contact-info {
     background: rgba(255, 255, 255, 0.03);
     border-left: 3px solid var(--primary-light);
@@ -708,10 +750,103 @@ header h1 {
     transform: translateX(5px);
 }
 
-.contact-info a:hover::before { transform: rotate(15deg) scale(1.1); }
-.contact-info a:active { transform: translateX(3px); }
+.contact-info a:hover::before {
+    transform: rotate(15deg) scale(1.1);
+}
 
-/* Opening Hours */
+.contact-info a:active {
+    transform: translateX(3px);
+}
+
+.header .right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+/* Cart Icon */
+.cart-icon {
+  font-size: 1.1rem;
+  color: var(--bg-white);
+  background-color: var(--primary-light);
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cart-icon:hover {
+  background-color: var(--button_info);
+  transform: translateY(-2px);
+}
+
+/* ================================================================
+   SUBHEADER (NAV INSIDE HEADER RIGHT SECTION)
+   ================================================================ */
+.subheader {
+  display: flex;
+  align-items: center;
+}
+
+.subheader ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.subheader ul li {
+  position: relative;
+  color: var(--bg-white);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.subheader ul li::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-light);
+  transition: width 0.3s ease;
+}
+
+.subheader ul li:hover {
+  color: var(--button_info);
+}
+
+.subheader ul li:hover::after {
+  width: 60%;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .header .right {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.8rem;
+  }
+
+  .subheader ul {
+    gap: 1rem;
+  }
+
+  .subheader ul li {
+    font-size: 0.9rem;
+  }
+}
+
+/* =================================================================
+   FOOTER - OPENING HOURS
+   ================================================================= */
 .opening-hours {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -738,7 +873,9 @@ header h1 {
     transition: all 0.3s ease;
 }
 
-.hours-block:last-child { border-bottom: none; }
+.hours-block:last-child {
+    border-bottom: none;
+}
 
 .hours-block:hover {
     background: rgba(255, 255, 255, 0.05);
@@ -761,18 +898,100 @@ header h1 {
 }
 
 /* =================================================================
-   RESPONSIVE
+   RESPONSIVE - GENERAL
    ================================================================= */
 @media (max-width: 768px) {
-    header { padding: 15px; }
-    header h1 { font-size: 1.5em; }
-    .filters { flex-wrap: wrap; gap: 8px; padding: 10px; }
-    .filters button { font-size: 0.85em; padding: 8px 12px; }
-    .cart-panel { width: 100%; }
-    .product { max-width: 400px; width: 100%; }
-    .modal { padding: 20px; width: 95%; }
+    header {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    .filters {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px;
+    }
+    
+    .filters button {
+        font-size: 0.85em;
+        padding: 8px 12px;
+    }
+    
+    .cart-panel {
+        width: 100%;
+    }
+    
+    .product {
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    .modal {
+        padding: 20px;
+        width: 95%;
+    }
 }
 
+/* =================================================================
+   RESPONSIVE - FOOTER
+   ================================================================= */
+@media (max-width: 768px) {
+    .footer {
+        margin-top: 30px;
+        padding: 20px 15px 15px;
+    }
+    
+    .footer-container {
+        gap: 15px;
+        grid-template-columns: 1fr;
+    }
+    
+    .store-location {
+        padding: 12px;
+    }
+    
+    .store-logo {
+        height: 45px;
+        width: 180px;
+    }
+    
+    .store-name {
+        font-size: 1.1em;
+    }
+    
+    .hours-block {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3px;
+    }
+    
+    .time {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info a {
+        font-size: 0.85em;
+        padding: 5px 8px;
+    }
+    
+    .opening-hours-title {
+        font-size: 0.95em;
+    }
+    
+    .day,
+    .time {
+        font-size: 0.8em;
+    }
+}
+
+/* =================================================================
+   ACCESSIBILITY - REDUCED MOTION
+   ================================================================= */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -781,26 +1000,7 @@ header h1 {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-}
-
-/* Footer Responsiveness */
-@media (max-width: 768px) {
-    .footer { margin-top: 30px; padding: 20px 15px 15px; }
-    .footer-container { gap: 15px; grid-template-columns: 1fr; }
-    .store-location { padding: 12px; }
-    .store-logo { height: 45px; width: 180px; }
-    .store-name { font-size: 1.1em; }
-    .hours-block { align-items: flex-start; flex-direction: column; gap: 3px; }
-    .time { text-align: left; }
-}
-
-@media (max-width: 480px) {
-    .contact-info a { font-size: 0.85em; padding: 5px 8px; }
-    .opening-hours-title { font-size: 0.95em; }
-    .day, .time { font-size: 0.8em; }
-}
-
-@media (prefers-reduced-motion: reduce) {
+    
     .store-location,
     .store-logo,
     .contact-info a,

@@ -2,7 +2,7 @@ import { html } from 'https://cdn.jsdelivr.net/npm/htl@0.3.1/+esm';
 
 
 function Footer () {
-    return html`<footer class="footer" id="contattaci">
+    return html`<footer id="footer" class="footer" id="contattaci">
     <div class="footer-container">
       
       <!-- Sassoferrato Location -->
@@ -10,12 +10,12 @@ function Footer () {
         <div class="store-header">
          
           <p class="store-name">TERMOCLIMA SRL</p>
-             <h2>Sede di Sassoferrato</h
-          <hr class="divider">
+             <h2>Sede di Sassoferrato </h2
+          <hr class="divider" >
         </div>
         
         <div class="contact-info">
-          <div class="address">
+          <div class="address" style="text-align: left;line-height: 2rem; margin-left: 6px;">
             Via Bruno Buozzi, 40/A<br>
             60041 Sassoferrato (AN)
           </div>
@@ -50,7 +50,7 @@ function Footer () {
         </div>
         
         <div class="contact-info">
-          <div class="address">
+            <div class="address" style="text-align: left;line-height: 2rem; margin-left: 6px;">
             Via del Rigo, 32<br>
             06022 Fossato di Vico (PG)
           </div>
