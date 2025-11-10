@@ -13,6 +13,7 @@ function CartItem(item) {
       ${item.currency}${item.price.toFixed(2)} × ${item.quantity} = ${item.currency}${(item.price * item.quantity).toFixed(2)}
     </div>
     <div class="cart-item-controls">
+      <input value="0"  />
       <button onclick=${() => updateQuantity(item.id, -1)}>-</button>
       <button onclick=${() => updateQuantity(item.id, 1)}>+</button>
       <button class="remove-btn" onclick=${() => removeFromCart(item.id)}>Rimuovi</button>
